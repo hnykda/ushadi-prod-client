@@ -196,7 +196,8 @@
         "map" : "Map",
         "list" : "List",
         "chart" : "Bar Chart",
-        "timeline" : "Timeline"
+        "timeline" : "Timeline",
+        "wordstat" : "Word Statistics wow!"
     },
     "post": {
         "posts" : "Posts",

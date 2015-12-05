@@ -16,7 +16,7 @@ function (
     ) {
         $scope.options = {
             chart: {
-                type: 'pieChart',
+                type: 'multiBarHorizontalChart',
                 height: 450,
                 margin: {
                     top: 0,
@@ -28,9 +28,24 @@ function (
                     return d.label;
                 },
                 y: function (d) {
-                    return d.value;
+                    return d.total;
                 },
-                showLabels: true,
+                showValues: false,
+                showControls: false,
+                valueFormat: d3.format('d'),
+                transitionDuration: 500,
+                xAxis: {
+                    axisLabel: $filter('translate')('post.categories'),
+                    tickPadding: -10,
+                    axisLabelDistance: 0
+                },
+                yAxis: {
+                    axisLabel: $filter('translate')('graph.post_count'),
+                    tickFormat: d3.format('d')
+                },
+                tooltips: true,
+                forceY: 0,
+                barColor: d3.scale.category20().range()
             }
         };
 
@@ -56,8 +71,8 @@ function (
                 if (results.totals[0]) {
                     results.totals[0].key = $scope.options.chart.yAxis.axisLabel;
                 }
-                //$scope.data = results.totals;
-                $scope.data = [{"label": "need", "value" : 1928},
+                $scope.data = results.totals;
+                /*$scope.data = results.totals = [{"label": "need", "value" : 1928},
                  {"label": "people", "value" : 1404},
                  {"label": "community", "value" : 1349},
                  {"label": "many", "value" : 1130},
@@ -106,7 +121,7 @@ function (
                  {"label": "area", "value" : 273},
                  {"label": "needed", "value" : 271},
                  {"label": "materials", "value" : 267},
-                 {"label": "blankets", "value" : 263}];
+                 {"label": "blankets", "value" : 263}];*/
                 $scope.isLoading = false;
             });
         };

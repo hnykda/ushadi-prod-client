@@ -15,7 +15,7 @@ angular.module('ushahidi.posts', [])
 .directive('postViewMap', require('./directives/views/post-view-map-directive.js'))
 .directive('postViewList', require('./directives/views/post-view-list-directive.js'))
 .directive('postViewTimeline', require('./directives/views/post-view-timeline-directive.js'))
-.directive('postWordStat'), require('./directives/views/post-view-wordstat-directive.js'))
+.directive('postWordStat', require('./directives/views/post-view-wordstat-directive.js'))
 .directive('postViewChart', require('./directives/views/post-view-chart-directive.js'))
 
 .service('PostEndpoint', require('./services/endpoints/post-endpoint.js'))

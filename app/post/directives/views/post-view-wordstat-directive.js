@@ -87,7 +87,7 @@ function (
                  {"label": "living", "value" : 497},
                  {"label": "houses", "value" : 471},
                  {"label": "much", "value" : 466},
-                 {"label": "n't", 456},
+                 {"label": "n't", "value" : 456},
                  {"label": "reports", "value" : 451},
                  {"label": "village", "value" : 438},
                  {"label": "tents", "value" : 432},

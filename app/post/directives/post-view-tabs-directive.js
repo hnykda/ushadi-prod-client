@@ -17,7 +17,8 @@ function (
                 'list',
                 'map',
                 'chart',
-                'timeline'
+                'timeline',
+                'wordstat'
             ];
         }
     };

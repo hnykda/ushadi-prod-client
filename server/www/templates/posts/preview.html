@@ -1,0 +1,120 @@
+<div class="single-post-listing">
+    <div class="select-post" ng-if="canSelect">
+        <input type="checkbox" value="{post.id}" ng-change="updateSelectedItems()" ng-model="post.selected">
+    </div>
+
+    <div class="post-summary !has-img">
+        <div class="clearfix"></div>
+        <!--
+        <div ng-if="has-img" class="post-img">
+            <img src="http://placehold.it/700x600" alt="">
+        </div>
+        -->
+        <div class="meta-data">
+            <span class="post-type-marker"><!-- todo marker style based on post type -->
+                {{post.type}}
+            </span>
+            <span class="date">{{post.updated || post.created | date:'longDate'}}</span> {{post.updated || post.created | date:'shortTime'}}<!--, via SMS -->
+        </div>
+        <div class="post-text">
+            <a href="/posts/{{post.id}}">
+                <h3>{{post.title}}</h3>
+            </a>
+            <p>
+                {{post.content}}
+            </p>
+            <!-- <p>
+                <a href="">10 comments</a>
+            </p> -->
+        </div>
+    </div>
+    <div class="step-and-actions">
+        <div class="step todo">
+            <h4 class="delta-alt" translate>
+                post.who_can_see_this
+            </h4>
+            <p ng-show="post.allowed_privileges.indexOf('update') == -1">
+                <span class="icon-left fa-globe" translate>
+                    {{publishedFor()}}
+                </span>
+            </p>
+            <div ng-show="post.allowed_privileges.indexOf('update') !== -1" class="custom-select cta init">
+                <select
+                    ng-change="publishPostTo()"
+                    ng-model="publishRole"
+                >
+                     <option
+                          value="draft"
+                          translate>
+                              post.publish_for_you
+                     </option>
+                     <option
+                          data-icon="fa-globe"
+                          value=""
+                          translate>
+                              post.publish_for_everyone
+                     </option>
+                     <option
+                          ng-repeat="role in availableRoles"
+                          data-icon="fa-user"
+                          value="{{role.name}}"
+                          >
+                              {{role.display_name}}
+                     </option>
+                </select>
+            </div>
+        </div>
+        <div class="actions-toggle">
+            <div class="actions-toggle-trigger">
+                <a href="#options" class="button-secondary init active" data-toggle="options"><span class="icon-left fa-ellipsis-h" translate>post.options</span></a>
+            </div>
+            <div id="options" class="actions-content init active">
+                <a ng-if="post.allowed_privileges.indexOf('update') !== -1"  class="button-secondary" ng-href="/posts/{{post.id}}/edit">
+                    <span class="icon-left fa-pencil" translate>post.post_actions.edit</span>
+                </a>
+<!--
+                <button type="button" class="button-secondary">
+                    <span class="icon-left fa-share">Share</span>
+                </button>
+-->
+                <fieldset ng-if="post.allowed_privileges.indexOf('update') !== -1" dropdown auto-close="outsideClick" ng-show="editableCollections.length > 0 || post.allowed_privilleges.indexOf('update') != 1" class="custom-fieldset init">
+                    <legend data-toggle="dropdown-menu" class="dropdown-trigger init" dropdown-toggle>
+                        <span class="icon-left fa-th" translate>global_filter.collections.collections</span>
+                    </legend>
+
+                    <div class="dropdown-menu init" dropdown-menu>
+                        <!-- div class="form-field search bar">
+                            <label for="search-collections" class="nodisplay" translate>global_filter.collections.search_collections</label>
+                            <input id="search-collections" placeholder="Search Collections" type="search">
+                        </div -->
+                        <div class="fieldset-results" ng-repeat="collection in editableCollections">
+                            <div class="form-field checkbox">
+                                <input id="collection" type="checkbox" ng-checked="postInCollection(collection)" ng-click="toggleCollection(collection)">
+                                <label for="collection">{{collection.name}}</label>
+                            </div>
+                        </div>
+                        <div class="form-field bar">
+                            <a class="button button-link init icon-left fa-plus" ng-show="!showNewCollectionInput" ng-click="toggleCreateCollection()" translate>
+                                set.create_collection
+                            </a>
+                            <div ng-show="showNewCollectionInput">
+                                <input id="create-collection" ng-model="newCollection" placeholder="Create Collection" type="text">
+                                <button type="button" ng-click="createNewCollection(newCollection)" translate>post.create</button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+<!--
+                      <select-collection ng-model="selectedCollection" ng-change="addToCollection(selectedCollection)"></select-collection>
+                    </li>
+                </ul>
+            </div>
+        </span>
+-->
+</div>
+
+

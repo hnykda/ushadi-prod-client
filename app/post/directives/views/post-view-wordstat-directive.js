@@ -28,23 +28,9 @@ function (
                     return d.label;
                 },
                 y: function (d) {
-                    return d.total;
+                    return d.value;
                 },
                 showLabels: true,
-                valueFormat: d3.format('d'),
-                transitionDuration: 500,
-                xAxis: {
-                    axisLabel: $filter('translate')('post.categories'),
-                    tickPadding: -10,
-                    axisLabelDistance: 0
-                },
-                yAxis: {
-                    axisLabel: $filter('translate')('graph.post_count'),
-                    tickFormat: d3.format('d')
-                },
-                tooltips: true,
-                forceY: 0,
-                barColor: d3.scale.category20().range()
             }
         };
 

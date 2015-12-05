@@ -50,7 +50,56 @@ function (
         };
 
         $scope.data = [{
-            values: []
+            values: [{"label": "need", "value" : 1928},
+             {"label": "people", "value" : 1404},
+             {"label": "community", "value" : 1349},
+             {"label": "many", "value" : 1130},
+             {"label": "food", "value" : 1117},
+             {"label": "inhabitants", "value" : 720},
+             {"label": "water", "value" : 698},
+             {"label": "access", "value" : 649},
+             {"label": "know", "value" : 629},
+             {"label": "contact", "value" : 612},
+             {"label": "shelter", "value" : 565},
+             {"label": "help", "value" : 551},
+             {"label": "medical", "value" : 520},
+             {"label": "living", "value" : 497},
+             {"label": "houses", "value" : 471},
+             {"label": "much", "value" : 466},
+             {"label": "n't", "value" : 456},
+             {"label": "reports", "value" : 451},
+             {"label": "village", "value" : 438},
+             {"label": "tents", "value" : 432},
+             {"label": "Clothes", "value" : 431},
+             {"label": "relief", "value" : 408},
+             {"label": "house", "value" : 399},
+             {"label": "due", "value" : 368},
+             {"label": "report", "value" : 351},
+             {"label": "VDC", "value" : 345},
+             {"label": "assistance", "value" : 341},
+             {"label": "please", "value" : 338},
+             {"label": "cooking", "value" : 336},
+             {"label": "bHow", "value" : 329},
+             {"label": "drinking", "value" : 328},
+             {"label": "available", "value" : 326},
+             {"label": "main", "value" : 326},
+             {"label": "shortage", "value" : 318},
+             {"label": "visited", "value" : 310},
+             {"label": "problems", "value" : 305},
+             {"label": "communities", "value" : 295},
+             {"label": "settlement", "value" : 294},
+             {"label": "nobIs", "value" : 292},
+             {"label": "conflicts", "value" : 290},
+             {"label": "Contact1", "value" : 288},
+             {"label": "Contact2", "value" : 286},
+             {"label": "expecting", "value" : 285},
+             {"label": "continuous", "value" : 285},
+             {"label": "Adult", "value" : 284},
+             {"label": "local", "value" : 283},
+             {"label": "area", "value" : 273},
+             {"label": "needed", "value" : 271},
+             {"label": "materials", "value" : 267},
+             {"label": "blankets", "value" : 263}]
         }];
 
         $scope.groupByOptions = {
@@ -71,8 +120,8 @@ function (
                 if (results.totals[0]) {
                     results.totals[0].key = $scope.options.chart.yAxis.axisLabel;
                 }
-                $scope.data = results.totals;
-                /*$scope.data = results.totals = [{"label": "need", "value" : 1928},
+                //$scope.data = results.totals;
+                /*$scope.data = [{"label": "need", "value" : 1928},
                  {"label": "people", "value" : 1404},
                  {"label": "community", "value" : 1349},
                  {"label": "many", "value" : 1130},

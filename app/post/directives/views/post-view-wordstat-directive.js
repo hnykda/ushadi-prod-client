@@ -45,9 +45,6 @@ function (
       //      {"label": "living", "value" : 497},
       //      {"label": "houses", "value" : 471}];
 
-
-         multiBarHorizontalChart
-
         $scope.options = {
             chart: {
                 type: 'multiBarHorizontalChart',

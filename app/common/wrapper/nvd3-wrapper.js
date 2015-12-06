@@ -26,7 +26,7 @@ require('nvd3/src/models/multiBarHorizontalChart');
 // require('nvd3/src/models/ohlcBar');
 // require('nvd3/src/models/parallelCoordinates');
 // require('nvd3/src/models/pie');
-// require('nvd3/src/models/pieChart');
+require('nvd3/src/models/pieChart');
 require('nvd3/src/models/scatter');
 // require('nvd3/src/models/scatterChart');
 // require('nvd3/src/models/sparkline');

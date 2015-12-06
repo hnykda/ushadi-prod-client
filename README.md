@@ -1,3 +1,4 @@
+# FuzzyData
 
 ### Frontend changes
 
@@ -6,3 +7,11 @@ On the platform-client project in Ushahidi, we added a new view called Wordstat.
 ### TODO for the future
 
 For the future, one possibility is to make the words more interactive in order to see related words to for example "need", which are better explained in a context. Another thing to fix is of course to not hard code the data.
+
+# Licence
+
+GNU Affero General Public License as published by the Free Software Foundation,version 3
+
+# Team members of the OpenHack2015 team
+
+Georgi Georgiev joey.jimi@yahoo.com Christian Hernvall christian.hernvall@gmail.com Daniel Hnyk hnyk@dagmail.com Daniel Hamngren daniel.hamngren@gmail.com Björn Boyd Isacsson dat12bis@student.lu.se

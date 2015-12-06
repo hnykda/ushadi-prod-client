@@ -14,58 +14,95 @@ function (
         d3,
         _
     ) {
-        $scope.options = {
-            chart: {
-                type: 'multiBarHorizontalChart',
-                height: 450,
-                margin: {
-                    top: 0,
-                    right: 40,
-                    bottom: 40,
-                    left: 5
-                },
-                x: function (d) {
-                    return d.label;
-                },
-                y: function (d) {
-                    return d.total;
-                },
-                showValues: false,
-                showControls: false,
-                valueFormat: d3.format('d'),
-                transitionDuration: 500,
-                xAxis: {
-                    axisLabel: $filter('translate')('post.categories'),
-                    tickPadding: -10,
-                    axisLabelDistance: 0
-                },
-                yAxis: {
-                    axisLabel: $filter('translate')('graph.post_count'),
-                    tickFormat: d3.format('d')
-                },
-                tooltips: true,
-                forceY: 0,
-                barColor: d3.scale.category20().range()
-            }
-        };
+      $scope.options = {
+          chart: {
+              type: 'pieChart',
+              height: 450,
+              margin: {
+                  top: 0,
+                  right: 40,
+                  bottom: 40,
+                  left: 5
+              },
+              x: function (d) {
+                  return d.label;
+              },
+              y: function (d) {
+                  return d.total;
+              },
+              showLabels: true
+          }
+      };
+      $scope.data = [{"label": "need", "total" : 1928},
+           {"label": "people", "total" : 1404},
+           {"label": "community", "total" : 1349},
+           {"label": "many", "total" : 1130},
+           {"label": "food", "total" : 1117},
+           {"label": "inhabitants", "total" : 720},
+           {"label": "water", "total" : 698},
+           {"label": "access", "total" : 649},
+           {"label": "know", "total" : 629},
+           {"label": "contact", "total" : 612},
+           {"label": "shelter", "total" : 565},
+           {"label": "help", "total" : 551},
+           {"label": "medical", "total" : 520},
+           {"label": "living", "total" : 497},
+           {"label": "houses", "total" : 471}];
 
-        $scope.data = [{
-            values: [{"label": "need", "total" : 1928},
-             {"label": "people", "total" : 1404},
-             {"label": "community", "total" : 1349},
-             {"label": "many", "total" : 1130},
-             {"label": "food", "total" : 1117},
-             {"label": "inhabitants", "total" : 720},
-             {"label": "water", "total" : 698},
-             {"label": "access", "total" : 649},
-             {"label": "know", "total" : 629},
-             {"label": "contact", "total" : 612},
-             {"label": "shelter", "total" : 565},
-             {"label": "help", "total" : 551},
-             {"label": "medical", "total" : 520},
-             {"label": "living", "total" : 497},
-             {"label": "houses", "total" : 471}]
-        }];
+
+        //  multiBarHorizontalChart
+        //
+        // $scope.options = {
+        //     chart: {
+        //         type: 'multiBarHorizontalChart',
+        //         height: 450,
+        //         margin: {
+        //             top: 0,
+        //             right: 40,
+        //             bottom: 40,
+        //             left: 5
+        //         },
+        //         x: function (d) {
+        //             return d.label;
+        //         },
+        //         y: function (d) {
+        //             return d.total;
+        //         },
+        //         showValues: false,
+        //         showControls: false,
+        //         valueFormat: d3.format('d'),
+        //         transitionDuration: 500,
+        //         xAxis: {
+        //             axisLabel: $filter('translate')('post.categories'),
+        //             tickPadding: -10,
+        //             axisLabelDistance: 0
+        //         },
+        //         yAxis: {
+        //             axisLabel: $filter('translate')('graph.post_count'),
+        //             tickFormat: d3.format('d')
+        //         },
+        //         tooltips: true,
+        //         forceY: 0,
+        //         barColor: d3.scale.category20().range()
+        //     }
+        // };
+        // $scope.data = [{
+        //     values: [{"label": "need", "total" : 1928},
+        //      {"label": "people", "total" : 1404},
+        //      {"label": "community", "total" : 1349},
+        //      {"label": "many", "total" : 1130},
+        //      {"label": "food", "total" : 1117},
+        //      {"label": "inhabitants", "total" : 720},
+        //      {"label": "water", "total" : 698},
+        //      {"label": "access", "total" : 649},
+        //      {"label": "know", "total" : 629},
+        //      {"label": "contact", "total" : 612},
+        //      {"label": "shelter", "total" : 565},
+        //      {"label": "help", "total" : 551},
+        //      {"label": "medical", "total" : 520},
+        //      {"label": "living", "total" : 497},
+        //      {"label": "houses", "total" : 471}]
+        // }];
 
         $scope.groupByOptions = {
             'tags' : 'post.categories',

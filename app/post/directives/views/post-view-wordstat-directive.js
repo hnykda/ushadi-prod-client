@@ -17,37 +17,30 @@ function (
       $scope.options = {
           chart: {
               type: 'pieChart',
-              height: 450,
-              margin: {
-                  top: 0,
-                  right: 40,
-                  bottom: 40,
-                  left: 5
-              },
               x: function (d) {
                   return d.label;
               },
               y: function (d) {
-                  return d.total;
+                  return d.value;
               },
               showLabels: true
           }
       };
-      $scope.data = [{"label": "need", "total" : 1928},
-           {"label": "people", "total" : 1404},
-           {"label": "community", "total" : 1349},
-           {"label": "many", "total" : 1130},
-           {"label": "food", "total" : 1117},
-           {"label": "inhabitants", "total" : 720},
-           {"label": "water", "total" : 698},
-           {"label": "access", "total" : 649},
-           {"label": "know", "total" : 629},
-           {"label": "contact", "total" : 612},
-           {"label": "shelter", "total" : 565},
-           {"label": "help", "total" : 551},
-           {"label": "medical", "total" : 520},
-           {"label": "living", "total" : 497},
-           {"label": "houses", "total" : 471}];
+      $scope.data = [{"label": "need", "value" : 1928},
+           {"label": "people", "value" : 1404},
+           {"label": "community", "value" : 1349},
+           {"label": "many", "value" : 1130},
+           {"label": "food", "value" : 1117},
+           {"label": "inhabitants", "value" : 720},
+           {"label": "water", "value" : 698},
+           {"label": "access", "value" : 649},
+           {"label": "know", "value" : 629},
+           {"label": "contact", "value" : 612},
+           {"label": "shelter", "value" : 565},
+           {"label": "help", "value" : 551},
+           {"label": "medical", "value" : 520},
+           {"label": "living", "value" : 497},
+           {"label": "houses", "value" : 471}];
 
 
         //  multiBarHorizontalChart
